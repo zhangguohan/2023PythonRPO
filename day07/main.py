@@ -1,8 +1,8 @@
 import random
-import hangman_art
-import hangman_words
+from hangman_art import logo3,stages
+from hangman_words import word_list
 #word_list = ["tank","zhang","pao"]
-chose_word = random.choice(hangman_words.word_list)
+chose_word = random.choice(word_list)
 print(f"{chose_word}")
 display = []
 word_length = len(chose_word)
@@ -13,7 +13,7 @@ print(display)
 end_of_game = False
 lives =6
 
-print(hangman_art.logo3)
+print(logo3)
 print("\nTo win, guess the word before the person is hung.\n")
 
 while not end_of_game:
@@ -24,7 +24,7 @@ while not end_of_game:
             display[positon] = letter
     if guess not in chose_word:
         lives -= 1
-        print(hangman_art.stages[lives])
+        print(stages[lives])
         if lives ==0:
             end_of_game = True
             print("your lose!")
