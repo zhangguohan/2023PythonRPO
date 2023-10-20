@@ -22,6 +22,7 @@ while not end_of_game:
         letter = chose_word[positon]
         if letter == guess:
             display[positon] = letter
+
     if guess not in chose_word:
         lives -= 1
         print(stages[lives])
